@@ -1,0 +1,87 @@
+    <style media="screen">
+
+      html{
+        font-family: 'Open Sans', sans-serif; 
+      }
+
+      body { 
+        box-sizing: border-box;
+        font-family: 'Open Sans', sans-serif;
+        text-align: center;
+        background: #dfdfdf;
+        margin: 0; 
+        padding: 0; 
+      }
+
+      button {
+        color: #535353;
+        background-color: white;
+        cursor: pointer;
+        font-weight: 700;
+        text-align: center;
+        padding: 0.5em 1em;
+        border: none;
+        border-radius: 0.2em;
+        box-shadow: 0 0.1em 0.3em #00000060;
+      }
+
+      button:hover {
+        background-color: #848484;
+        color: white;
+      }
+
+      #message { 
+        background: white; 
+        max-width: 60%;
+        margin: 5em auto 1em; 
+        padding: 2em 1.5em; 
+        border-radius: 0.3em; 
+        box-shadow: 0 0.5em 2em #00000060;
+      }
+
+      #message h2 {
+        color: #ffa100; 
+        font-size: calc(2vw + 2vh);
+        font-weight: 300;
+        text-align: center;
+      }
+
+      #load { 
+        color: rgba(0,0,0,0.4); 
+        text-align: center; 
+        font-size: 13px; 
+      }
+
+      @media (max-width: 600px) {
+        header{
+          grid-template-rows: 1fr 1fr;
+          grid-template-columns: 100%;
+          grid-template-areas: 
+          "logo"
+          "login";
+        }
+      }
+
+      header{
+        display: grid;
+        grid-template-areas:
+        "logo login";
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 100%;
+      }
+
+      header object{
+        padding: 1em;
+        max-width: 50%;
+        align-self: center;
+        justify-self: start;
+        grid-area: logo;
+      }
+
+      #firebaseui-auth-container{
+        grid-area: login;
+        align-self: center;
+        justify-self: end;
+      }
+      
+    </style>
