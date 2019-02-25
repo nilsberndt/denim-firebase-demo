@@ -18,8 +18,38 @@
         href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
 
     <!-- initialize Firebase after all desired features are loaded -->
+    <script>
 
-      <!-- Insert site specific script here from Firebase console -> Web Setup -->
+              /* Initialize Firebase
+              // TODO: Replace with your project's customized code snippet
+              var config = {
+                apiKey: "<API_KEY>",
+                authDomain: "<PROJECT_ID>.firebaseapp.com",
+                databaseURL: "https://<DATABASE_NAME>.firebaseio.com",
+                projectId: "<PROJECT_ID>",
+                storageBucket: "<BUCKET>.appspot.com",
+                messagingSenderId: "<SENDER_ID>",
+              };
+              firebase.initializeApp(config);
+              */
+
+
+      // FirebaseUI config
+      var uiConfig = {
+      callbacks: {
+        signInSuccessWithAuthResult: () => false
+      },
+      signInOptions: [
+        firebase.auth.EmailAuthProvider.PROVIDER_ID,
+        firebase.auth.GoogleAuthProvider.PROVIDER_ID
+      ]};
+
+      // Initialize the FirebaseUI Widget using Firebase.
+      var ui = new firebaseui.auth.AuthUI(firebase.auth());
+
+      // The start method will wait until the DOM is loaded.
+      ui.start('#firebaseui-auth-container', uiConfig);
+    </script>
 
     <!-- Site JS -->
     <script src="scripts/index.js"></script>
