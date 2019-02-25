@@ -1,0 +1,8 @@
+{
+  "rules": {
+  	"greeting":{
+  		".read": "auth != null",
+    	".write": false
+  	}
+  }
+}
